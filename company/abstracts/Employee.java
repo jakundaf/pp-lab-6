@@ -31,4 +31,19 @@ public abstract class Employee implements Employable {
     public int hashCode() {
         return id;
     }
+    public boolean equals (Object obj){
+        if (obj == null || this != obj) {
+            return false;
+        }
+        if (this == obj) {
+            return true;
+        }
+        if (getClass() != obj.getClass()){
+            return false;
+        }
+
+        Employee employee = (Employee) obj;
+        return this.id == employee.id;
+    }
+
 }
